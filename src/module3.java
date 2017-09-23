@@ -3,14 +3,6 @@
  */
 public class module3
 {
-    public static void main(String[] args)
-    {
-        Comparable[] array = {1, 2, 2, 2, 4, 5, 8, 9, 14, 32};
-        //Comparable[] array = {"APPLE", "BANANA", "BANANA", "BANANA", "BLUEBERRY", "COCONUT", "DURAN"};
-
-       System.out.println(binarySearchForInsert(array, 33));
-    }
-
     public static int binarySearchForInsert(Comparable[] objArray, Comparable searchObj)  //Will return index of found item.  If more than one of item returns index of last item.
     {
         int low = 0;
@@ -43,7 +35,11 @@ public class module3
             }
             else if (objArray[mid].compareTo(searchObj) > 0)
             {
-                if (objArray[mid - 1].compareTo(searchObj) < 0)
+                if (mid == 0)
+                {
+                    return 0;
+                }
+                else if (objArray[mid - 1].compareTo(searchObj) < 0)
                 {
                     return mid;
                 }
@@ -57,6 +53,11 @@ public class module3
 
                 int prestep = mid;
                 int poststep = mid + 1;
+
+                if (mid == objArray.length - 1)
+                {
+                    return mid + 1;
+                }
 
                 //Run loop to find end of repeating values
                 while (objArray[prestep].compareTo(objArray[poststep]) == 0)

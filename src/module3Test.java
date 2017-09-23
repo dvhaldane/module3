@@ -35,7 +35,7 @@ public class module3Test extends module3
     {
         Comparable[] array = {2,3,4};
 
-        Assert.assertTrue(binarySearchForInsert(array, 1) == 4);
+        Assert.assertTrue(binarySearchForInsert(array, 1) == 0);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class module3Test extends module3
     {
         Comparable[] array = {2,3,3,4};
 
-        Assert.assertTrue(binarySearchForInsert(array, 1) == 5);
+        Assert.assertTrue(binarySearchForInsert(array, 1) == 0);
     }
 
     @Test
@@ -67,7 +67,7 @@ public class module3Test extends module3
     {
         Comparable[] array = {2,3,4};
 
-        Assert.assertTrue(binarySearchForInsert(array, 5) == 4);
+        Assert.assertTrue(binarySearchForInsert(array, 5) == 3);
     }
 
     @Test
@@ -75,7 +75,7 @@ public class module3Test extends module3
     {
         Comparable[] array = {2,3,3,4};
 
-        Assert.assertTrue(binarySearchForInsert(array, 5) == 5);
+        Assert.assertTrue(binarySearchForInsert(array, 5) == 4);
     }
 
     @Test
@@ -97,15 +97,17 @@ public class module3Test extends module3
     @Test
     public void testMiddleBoundNotExistsOdd() throws Exception
     {
-        Comparable[] array = {2,4,4,5};
+        Comparable[] array = {2,4,6};
 
-        Assert.assertTrue(binarySearchForInsert(array, 3) == 1);
+        Assert.assertTrue(binarySearchForInsert(array, 5) == 2);
     }
 
     @Test
     public void testMiddleBoundNotExistsEven() throws Exception
     {
+        Comparable[] array = {2,4,6,7};
 
+        Assert.assertTrue(binarySearchForInsert(array, 5) == 2);
     }
 
 }
