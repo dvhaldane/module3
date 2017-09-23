@@ -20,7 +20,7 @@ public class module3
             mid = (low + high) / 2;
             if (objArray[mid].compareTo(searchObj) < 0)
             {
-                if (mid == objArray.length - 1)
+                if (mid == objArray.length - 1 )
                 {
                     return mid + 1;
                 }
@@ -72,8 +72,8 @@ public class module3
             }
         }
 
-        //Handle insertion of data not already in the array
-        return mid + 2;  //Return fail code which is length + 1;
+        //Return fail code which is length + 2;
+        return mid + 2;
     }
 }
 
