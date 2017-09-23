@@ -8,7 +8,7 @@ public class module3
         Comparable[] array = {1, 2, 2, 2, 4, 5, 8, 9, 14, 32};
         //Comparable[] array = {"APPLE", "BANANA", "BANANA", "BANANA", "BLUEBERRY", "COCONUT", "DURAN"};
 
-       System.out.println(binarySearchForInsert(array, 15));
+       System.out.println(binarySearchForInsert(array, 33));
     }
 
     public static int binarySearchForInsert(Comparable[] objArray, Comparable searchObj)  //Will return index of found item.  If more than one of item returns index of last item.
@@ -28,11 +28,29 @@ public class module3
             mid = (low + high) / 2;
             if (objArray[mid].compareTo(searchObj) < 0)
             {
-                low = mid + 1;  //Test Commit
+                if (mid == objArray.length - 1)
+                {
+                    return mid + 1;
+                }
+                else if (objArray[mid + 1].compareTo(searchObj) > 0)
+                {
+                    return mid + 1;
+                }
+                else
+                {
+                    low = mid + 1;
+                }
             }
             else if (objArray[mid].compareTo(searchObj) > 0)
             {
-                high = mid - 1;
+                if (objArray[mid - 1].compareTo(searchObj) < 0)
+                {
+                    return mid;
+                }
+                else
+                {
+                    high = mid - 1;
+                }
             }
             else
             {
