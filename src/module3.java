@@ -28,7 +28,7 @@ public class module3
             mid = (low + high) / 2;
             if (objArray[mid].compareTo(searchObj) < 0)
             {
-                low = mid + 1;
+                low = mid + 1;  //Test Commit
             }
             else if (objArray[mid].compareTo(searchObj) > 0)
             {
