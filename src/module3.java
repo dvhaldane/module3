@@ -73,12 +73,7 @@ public class module3
         }
 
         //Handle insertion of data not already in the array
-
-        System.out.println("Low is " + low);
-        System.out.println("High is " + high);
-        System.out.println("Mid is" + mid);
-
-        return mid + 1;  //Return fail code which is length + 1;
+        return mid + 2;  //Return fail code which is length + 1;
     }
 }
 
